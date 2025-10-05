@@ -3,7 +3,6 @@ package thinkingTesterApis;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
@@ -30,7 +29,7 @@ public class ThinkingTetserApisTest {
 
 		RequestSpecification request = RestAssured.given();
 		request.header("Authorization",
-				"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODkzNzkyN2UxMDg2NTAwMTVkZThlNjEiLCJpYXQiOjE3NTkwMzg0NTR9.KCtxCQzfFPkYWALSDJahpm1TDR_xrv-nzLki5z7hsdo");
+				"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODkzNzkyN2UxMDg2NTAwMTVkZThlNjEiLCJpYXQiOjE3NTk0NjQ5MTB9.o0CoCfh2b53F6xjPnLLNWxEORnzmaRHY9OvQdkYLMY8");
 
 		Response res = request.get("/contacts");
 
@@ -62,7 +61,7 @@ public class ThinkingTetserApisTest {
 		RestAssured.baseURI = "https://thinking-tester-contact-list.herokuapp.com";
 
 		given().log().all().contentType(ContentType.JSON).header("Authorization",
-				"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODkzNzkyN2UxMDg2NTAwMTVkZThlNjEiLCJpYXQiOjE3NTkwNDI2MTl9.vGuyEzPx6Oj3yvmjX96RRSi_garGI4K8hEcbKY6hezw")
+				"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODkzNzkyN2UxMDg2NTAwMTVkZThlNjEiLCJpYXQiOjE3NTk0NjQ5MTB9.o0CoCfh2b53F6xjPnLLNWxEORnzmaRHY9OvQdkYLMY8")
 				.body(new File("./src/test/resources/jsons/user.json")).when().log().all().post("/contacts").then()
 				.log().all().assertThat().statusCode(201);
 	}
@@ -84,7 +83,7 @@ public class ThinkingTetserApisTest {
 		String replacedJsonContent = jsonContent.replace("{{email}}", randomEmailId);
 
 		String id = given().log().all().contentType(ContentType.JSON).header("Authorization",
-				"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODkzNzkyN2UxMDg2NTAwMTVkZThlNjEiLCJpYXQiOjE3NTkwNDI2MTl9.vGuyEzPx6Oj3yvmjX96RRSi_garGI4K8hEcbKY6hezw")
+				"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODkzNzkyN2UxMDg2NTAwMTVkZThlNjEiLCJpYXQiOjE3NTk0NjQ5MTB9.o0CoCfh2b53F6xjPnLLNWxEORnzmaRHY9OvQdkYLMY8")
 				.body(replacedJsonContent).when().log().all().post("/contacts").then()
 				.log().all().assertThat().statusCode(201).extract().path("_id");
 		

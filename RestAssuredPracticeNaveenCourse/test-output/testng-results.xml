@@ -2,16 +2,16 @@
 <testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-28T13:35:37 IST" name="Default suite" finished-at="2025-09-28T13:35:41 IST" duration-ms="3438">
+  <suite started-at="2025-10-05T21:40:21 IST" name="Default suite" finished-at="2025-10-05T21:40:38 IST" duration-ms="17360">
     <groups>
     </groups>
-    <test started-at="2025-09-28T13:35:37 IST" name="Default test" finished-at="2025-09-28T13:35:41 IST" duration-ms="3438">
-      <class name="thinkingTesterApis.ThinkingTetserApisTest">
-        <test-method signature="createUserWithRandomEmailFromFile()[pri:0, instance:thinkingTesterApis.ThinkingTetserApisTest@8dbdac1]" started-at="2025-09-28T13:35:37 IST" name="createUserWithRandomEmailFromFile" finished-at="2025-09-28T13:35:41 IST" duration-ms="3392" status="PASS">
+    <test started-at="2025-10-05T21:40:21 IST" name="Default test" finished-at="2025-10-05T21:40:38 IST" duration-ms="17360">
+      <class name="thinkingTesterApis.ThinkTesterApiTestingUsingPojo">
+        <test-method signature="deleteUser()[pri:0, instance:thinkingTesterApis.ThinkTesterApiTestingUsingPojo@7c729a55]" started-at="2025-10-05T21:40:21 IST" name="deleteUser" finished-at="2025-10-05T21:40:38 IST" duration-ms="17290" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createUserWithRandomEmailFromFile -->
-      </class> <!-- thinkingTesterApis.ThinkingTetserApisTest -->
+        </test-method> <!-- deleteUser -->
+      </class> <!-- thinkingTesterApis.ThinkTesterApiTestingUsingPojo -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

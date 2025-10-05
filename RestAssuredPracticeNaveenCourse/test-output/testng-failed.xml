@@ -3,12 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="thinkingTesterApis.ThinkingTetserApisTest">
+      <class name="thinkingTesterApis.ThinkTesterApiTestingUsingPojo">
         <methods>
-          <include name="getAllUsers"/>
           <include name="createUser"/>
         </methods>
-      </class> <!-- thinkingTesterApis.ThinkingTetserApisTest -->
+      </class> <!-- thinkingTesterApis.ThinkTesterApiTestingUsingPojo -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
