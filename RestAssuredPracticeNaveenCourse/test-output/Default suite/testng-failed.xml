@@ -5,7 +5,7 @@
     <classes>
       <class name="thinkingTesterApis.ThinkTesterApiTestingUsingPojo">
         <methods>
-          <include name="createUser"/>
+          <include name="createUserUsingLombokBuider"/>
         </methods>
       </class> <!-- thinkingTesterApis.ThinkTesterApiTestingUsingPojo -->
     </classes>
