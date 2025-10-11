@@ -34,7 +34,7 @@ public class PetApis {
 	Long id =	given().log().all().contentType(ContentType.JSON).body(petLombok).when().post("/pet").then()
 				.assertThat().statusCode(200).extract().path("id");
 	
-	System.out.println("Created id is : " + id);
+	System.out.println("Created id is : " + id); //good
 	
 	
 
