@@ -12,14 +12,28 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class ThinkTesterApiTestingUsingPojo {
 
-	private static String AUTH_TOKEN = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODkzNzkyN2UxMDg2NTAwMTVkZThlNjEiLCJpYXQiOjE3NTk4NTE3NjJ9.P-2G-AZDXf7p_qBrjs6J0j5IvszVvevkRw27XB7j-EU";
+	private static String AUTH_TOKEN = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODkzNzkyN2UxMDg2NTAwMTVkZThlNjEiLCJpYXQiOjE3NjAxNjA1OTF9.tdIV1RJ8V4SAuTdtKCnJbJAxwDsp-sdCfI0ASE-RMUs";
 
 	public String randomEmail() {
 		return "automationtesting" + System.currentTimeMillis() + "@maillinator.com";
 	}
 
 	@Test
-public void createUserUsingLombokBuider() {
+	public void createUserUsingLombok() {
+
+		ThinkTesterPojoWithLombok userObj = new ThinkTesterPojoWithLombok("Amit", "Parchari", "1970-01-01",
+				randomEmail(), "7303709376", "Kalinga Nagar", "Bhubaneswar", "Bhubaeswar", "Orissa", "751005", "India");
+
+		RestAssured.baseURI = "https://thinking-tester-contact-list.herokuapp.com";
+
+		String id = given().log().all().header("Authorization", AUTH_TOKEN).contentType(ContentType.JSON).body(userObj)
+				.when().log().all().post("/contacts").then().assertThat().statusCode(201).extract().path("_id");
+
+		System.out.println("Created User id is: " + id);
+	}
+
+	@Test
+	public void createUserUsingLombokBuider() {
 
 		ThinkTesterPojoWithLombok userObj = new ThinkTesterPojoWithLombok.ThinkTesterPojoWithLombokBuilder()
 				.firstName("Amit").lastName("Parchari").birthdate("1970-01-01").email(randomEmail()).phone("7303709376")
