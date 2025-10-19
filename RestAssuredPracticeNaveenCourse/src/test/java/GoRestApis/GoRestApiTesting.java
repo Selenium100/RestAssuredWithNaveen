@@ -26,7 +26,7 @@ public class GoRestApiTesting {
 		Assert.assertEquals(res.statusCode(), 200);
 		
 		JsonPath js =  res.jsonPath();
-		System.out.println(js.getInt("id"));
+		System.out.println(js.getInt("id")); // changed in tag based
 	}
 
 }
