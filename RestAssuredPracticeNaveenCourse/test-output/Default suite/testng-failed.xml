@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="petApiUsingLombok.PetApis">
+      <class name="deserializationWithGetCall.ThinkTesterApiTesting">
         <methods>
-          <include name="CreatePet"/>
+          <include name="createUser"/>
         </methods>
-      </class> <!-- petApiUsingLombok.PetApis -->
+      </class> <!-- deserializationWithGetCall.ThinkTesterApiTesting -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
