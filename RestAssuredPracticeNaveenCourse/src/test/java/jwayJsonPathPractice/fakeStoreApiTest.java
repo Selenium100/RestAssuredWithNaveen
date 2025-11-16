@@ -79,5 +79,25 @@ public class fakeStoreApiTest {
 		System.out.println(twoConditionIdsList);
 		
 	}
+	
+	@Test
+	public void  minPrice() {
+		RestAssured.baseURI = "https://fakestoreapi.com";
+		Response res = given().when().get("/products");
+		
+		Assert.assertEquals(res.statusCode(), 200);
+		
+		String body = res.getBody().asString();
+		ReadContext ctx =  JsonPath.parse(body);
+		double minPrice = ctx.read("min($[*].price)");
+		double mixPrice = ctx.read("max($[*].price)");
+		double avgPrice = ctx.read("avg($[*].price)");
+		double sumPrices = ctx.read("sum($[*].price)");
+		
+		System.out.println("Min Price is " + minPrice);
+		System.out.println("Max Price is " + mixPrice);
+		System.out.println("Avg Price is " + avgPrice);
+		System.out.println("Sum of all the prices " + sumPrices);
+	}
 
 }
