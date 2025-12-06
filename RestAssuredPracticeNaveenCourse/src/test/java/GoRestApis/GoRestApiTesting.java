@@ -15,7 +15,7 @@ public class GoRestApiTesting {
 	public void getUser() {
 		RestAssured.baseURI = "https://gorest.co.in";
 		
-		Response res = given().header("Authorization", "Bearer 120c4667fe92fd1b40733ae5aa40f9435c0653d197693bb2e885ac1748ea8bf7")
+		Response res = given().header("Authorization", "Bearer 120c4667fe92fd1b40733ae5aa40f9435c0653d197693bb2e885ac1748ea8bf7") //testing
 		.when().get("/public/v2/users/8145422");
 		
 		res.prettyPrint();
